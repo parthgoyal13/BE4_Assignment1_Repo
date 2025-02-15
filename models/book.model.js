@@ -15,7 +15,18 @@ const bookSchema = new mongoose.Schema({
   },
   genre: {
     type: [String],
-    enum: ["Non-fiction", "Business", "Autobiography"],
+    enum: [
+      "Non-Fiction",
+      "Business",
+      "Autobiography",
+      "Fiction",
+      "Historical",
+      "Romance",
+      "Fantasy",
+      "Mystery",
+      "Thriller",
+      "Self-help",
+    ],
     required: true,
   },
   language: {
@@ -29,7 +40,7 @@ const bookSchema = new mongoose.Schema({
   rating: {
     type: Number,
     min: 0,
-    max: 5,
+    max: 10,
     default: 0,
   },
   summary: {
