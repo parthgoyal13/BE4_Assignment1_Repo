@@ -1,12 +1,13 @@
 const { initializeDatabase } = require("./db/db.connect");
-const Book = require("./models/book.model");
-initializeDatabase();
 
 const express = require("express");
-
+const cors = require("cors");
 const app = express();
+
 app.use(express.json());
 app.use(cors());
+initializeDatabase();
+const Book = require("./models/book.model");
 
 async function createBook(newBook) {
   try {
